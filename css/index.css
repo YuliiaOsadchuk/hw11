@@ -129,30 +129,31 @@
         width: 100%;
         height: 100vh;
         padding-top: 50px;
+        position: relative;
     }
     
     .lines {
         width: 400px;
         height: 400px;
         position: absolute;
-        top: 50%;
+        top: 30%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
     
     .lines:hover span:nth-child(1) {
-        transform: translateY(80px) rotate(-45deg);
-    }
-    
-    .lines:hover span:nth-child(2) {
         transform: scale(0);
     }
     
-    .lines:hover span:nth-child(3) {
-        transform: rotate(-135deg);
+    .lines:hover span:nth-child(2) {
+        transform: translateY(50px) rotate(45deg);
     }
     
-    .lines:hover span:nth-child(1)::after {
+    .lines:hover span:nth-child(3) {
+        transform: translateY(10px) rotate(-45deg);
+    }
+    
+    .lines:hover span:nth-child(2)::after {
         background: blue;
         box-shadow: 0px 0px 108px 19px rgb(21, 0, 255);
     }
@@ -184,7 +185,7 @@
         left: 60px;
     }
     
-    .lines-block .lines .line::after {
+    .lines-block .lines .line:after {
         content: " ";
         display: block;
         width: 320px;
@@ -197,24 +198,11 @@
     }
     
     .lines-block .lines .line-middle:before {
-        content: " ";
-        display: block;
-        width: 320px;
-        height: 20px;
-        background: #000000;
-        position: absolute;
-        top: 0;
-        left: 0;
-        border-radius: 4px;
+        right: 60px;
+        left: unset;
+        z-index: 1;
     }
     
-    .lines-block .lines .line-middle::after {
-        content: " ";
-        display: block;
-        width: 20px;
-        height: 20px;
-        background: #000000;
-        position: absolute;
-        top: 0;
-        right: 60px;
+    .lines-block .lines .line-middle:after {
+        left: 0;
     }
